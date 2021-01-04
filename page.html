@@ -1,0 +1,57 @@
+<html>
+  <header>
+    <style>
+      .Green {
+        height: 50px;
+        width: 50px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        background: green;
+        display: inline-block;
+      }
+      .Red {
+        height: 50px;
+        width: 50px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        background: red;
+        display: inline-block;
+      }
+    </style>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      function initGame() {
+
+        var mapSize = 10; // create a field of 10x10
+        var cellsPerRow = 10; // 10 cells per row
+
+        for (var x = 0; x < mapSize; x++) {
+          for (var y = 0; y < mapSize; y++) {
+
+            createCell(x, y);
+
+          }
+          $(document.body).append("<br>");
+        }
+
+      }
+
+      function createCell(x, y) {
+
+        // store this cell position to a data class
+
+        var cellDiv = $("<div></div>"); // create the cell div
+        cellDiv.addClass("Green"); // add some css
+        $(document.body).append(cellDiv); // add the cell div to the parent
+      }
+    </script>
+
+  </header>
+
+  <body onLoad="initGame()">
+
+  </body>
+</html>
